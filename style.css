@@ -157,6 +157,40 @@ footer {
     background: #333;
     color: #fff;
     text-align: center;
-    padding: 30px 0;
+    padding: 30px 20px;
     margin-top: 50px;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+/* Định dạng khu vực thông tin người tạo */
+.creator-info {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #555; /* Đường kẻ ngang phân cách */
+    font-size: 0.95rem;
+}
+
+.creator-info p {
+    margin: 5px 0;
+}
+
+.creator-info a {
+    color: #4CAF50; /* Màu xanh lá sáng để nổi bật trên nền tối */
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.creator-info a:hover {
+    text-decoration: underline;
+    color: #81c784;
+}
+
+.note {
+    margin-top: 15px !important;
+    color: #bbb; /* Màu xám nhạt cho phần ghi chú */
+    font-size: 0.85rem;
+}
 }
