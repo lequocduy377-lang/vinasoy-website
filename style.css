@@ -1,9 +1,7 @@
-/* Tổng quát */
 :root {
-    --primary-green: #2d8a39;
-    --hover-green: #216a2b;
-    --light-bg: #f9fbfa;
+    --primary-green: #2e8b57;
     --text-color: #333;
+    --bg-light: #f9f9f9;
 }
 
 body {
@@ -11,168 +9,123 @@ body {
     margin: 0;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--light-bg);
-    scroll-behavior: smooth;
+    background-color: #fff;
 }
 
 .container {
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Header mượt mà kiểu doanh nghiệp */
+/* Header */
 .main-header {
-    background: rgba(255, 255, 255, 0.98);
-    padding: 12px 0;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
-    backdrop-filter: blur(10px);
 }
 
 .nav-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 20px;
 }
 
-.logo-img { height: 50px; width: auto; }
+.logo-img { height: 50px; }
 
 nav ul {
     list-style: none;
     display: flex;
-    margin: 0;
-    padding: 0;
+    gap: 20px;
 }
 
-nav ul li { margin-left: 25px; }
-
-nav ul li a {
+nav a {
     text-decoration: none;
-    color: #444;
+    color: var(--text-color);
     font-weight: 500;
-    font-size: 0.95rem;
-    text-transform: uppercase;
-    transition: color 0.3s;
 }
 
-nav ul li a:hover { color: var(--primary-green); }
-
-/* Hero Section */
-.hero {
-    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('vinasoy.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 70vh;
+/* Hero Section - Tối ưu cho ảnh vinasoy.jpeg */
+.hero-anniversary {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('vinasoy.jpeg');
+    background-size: cover;      /* Đảm bảo ảnh phủ kín nhưng vẫn rõ nét */
+    background-position: center; /* Căn giữa ảnh để không mất chi tiết quan trọng */
+    height: 80vh;                /* Tăng chiều cao để khoe trọn ảnh kỷ niệm */
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
     text-align: center;
     color: #fff;
-    padding-bottom: 60px;
 }
 
-.hero h1 {
+.hero-content h1 {
     font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
 }
 
 .btn {
     display: inline-block;
-    padding: 12px 35px;
     background: var(--primary-green);
     color: #fff;
+    padding: 12px 30px;
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: 5px;
     font-weight: bold;
-    text-transform: uppercase;
-    margin-top: 20px;
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
-.btn:hover {
-    background: var(--hover-green);
-    transform: scale(1.05);
-}
+.btn:hover { background: #246b43; }
 
-/* Sản phẩm */
-.products { padding: 80px 0; }
-.section-heading { text-align: center; margin-bottom: 50px; }
-.section-title { color: var(--primary-green); font-size: 2.2rem; margin-bottom: 5px; }
-.category-title { color: #555; border-bottom: 2px solid var(--primary-green); display: inline-block; padding-bottom: 5px; margin-bottom: 20px; }
-
+/* Product Cards */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
 }
 
-.card, .card-premium {
+.card {
     background: #fff;
-    padding: 30px 20px;
-    border-radius: 16px;
+    padding: 20px;
+    border-radius: 10px;
     text-align: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
-    transition: all 0.3s ease;
-    border: 1px solid #f0f0f0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
 }
 
-.card:hover, .card-premium:hover { 
-    transform: translateY(-10px); 
-    box-shadow: 0 15px 30px rgba(45, 138, 57, 0.15); 
-}
-
-.highlight { border: 2px solid var(--primary-green); }
+.card:hover { transform: translateY(-5px); }
 
 .product-img {
-    width: 100%;
-    height: 190px;
+    max-width: 100%;
+    height: 200px;
     object-fit: contain;
-    margin-bottom: 20px;
-    transition: transform 0.4s ease;
+    margin-bottom: 15px;
 }
 
-.card:hover .product-img { transform: scale(1.08); }
+.highlight { border: 2px solid var(--primary-green); background: #f0fff4; }
 
-/* Chuyên gia & Công nghệ */
+/* Tech Section */
 .tech {
     background: var(--primary-green);
+    padding: 60px 0;
     color: #fff;
-    padding: 80px 0;
+    text-align: center;
 }
 
 .tech-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
 }
 
-.tech-item {
-    background: rgba(255,255,255,0.1);
-    padding: 30px;
-    border-radius: 12px;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255,255,255,0.2);
-}
-
-.tech-item strong { font-size: 1.2rem; display: block; margin-bottom: 10px; color: #fff; }
-
-/* Footer */
-footer {
-    background: #1a1a1a;
-    color: #ddd;
-    text-align: center;
-    padding: 40px 0;
-}
-.creator-info { margin-top: 15px; font-size: 0.9rem; color: #aaa; }
-/* Hệ sinh thái sản phẩm khác (Đã khôi phục) */
+/* Other Products */
 .other-products {
-    padding: 60px 0 80px 0;
+    padding: 60px 0;
     text-align: center;
 }
 
@@ -182,23 +135,19 @@ footer {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .other-products li {
-    background: #fff;
-    padding: 15px 30px;
+    background: #f0f0f0;
+    padding: 10px 25px;
     border-radius: 50px;
     font-weight: 500;
-    color: var(--text-color);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border: 1px solid #eaeaea;
-    transition: all 0.3s;
 }
 
-.other-products li:hover {
-    background: var(--primary-green);
+footer {
+    background: #333;
     color: #fff;
-    transform: translateY(-3px);
+    text-align: center;
+    padding: 20px 0;
 }
