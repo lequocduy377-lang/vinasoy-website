@@ -1,27 +1,35 @@
-/* Tổng quan */
+/* Tổng quát */
+:root {
+    --primary-green: #2d8a39;
+    --hover-green: #216a2b;
+    --light-bg: #f9fbfa;
+    --text-color: #333;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
     margin: 0;
-    color: #333;
-    background-color: #f0f8ff; /* Màu nền cho các phần không phải thẻ */
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
     scroll-behavior: smooth;
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
     padding: 0 20px;
 }
 
-/* Header */
-header {
-    background: #fff;
-    padding: 10px 0; /* Giảm phần đệm để gọn hơn */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+/* Header mượt mà kiểu doanh nghiệp */
+.main-header {
+    background: rgba(255, 255, 255, 0.98);
+    padding: 12px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     position: sticky;
     top: 0;
     z-index: 1000;
+    backdrop-filter: blur(10px);
 }
 
 .nav-bar {
@@ -30,16 +38,7 @@ header {
     align-items: center;
 }
 
-/* ĐỊNH DẠNG MỚI CHO LOGO HÌNH ẢNH */
-.logo-link {
-    display: flex;
-    align-items: center;
-}
-
-.logo-img {
-    height: 45px; /* Điều chỉnh chiều cao logo cho phù hợp */
-    width: auto; /* Giữ tỷ lệ ảnh */
-}
+.logo-img { height: 50px; width: auto; }
 
 nav ul {
     list-style: none;
@@ -48,180 +47,102 @@ nav ul {
     padding: 0;
 }
 
-nav ul li {
-    margin-left: 20px;
-}
+nav ul li { margin-left: 25px; }
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: 0.3s;
-    font-size: 0.95rem; /* Gọn hơn chút */
+    color: #444;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    transition: color 0.3s;
 }
 
-nav ul li a:hover {
-    color: #2d8a39;
-}
+nav ul li a:hover { color: var(--primary-green); }
 
-/* Hero Section - CẬP NHẬT: THÊM ẢNH NỀN CÁNH ĐỒNG */
+/* Hero Section */
 .hero {
-    /* Thay thế nền xám bằng ảnh nền mới 'vinasoy.png' */
-    background-image: url('vinasoy.png');
-    background-size: cover; /* Ảnh bao phủ toàn bộ khu vực */
-    background-position: center; /* Căn giữa ảnh */
-    background-repeat: no-repeat; /* Không lặp lại ảnh */
-    
-    height: 60vh;
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('vinasoy.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 70vh;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     text-align: center;
     color: #fff;
-    padding: 20px; /* Thêm phần đệm cho nội dung */
+    padding-bottom: 60px;
 }
 
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 15px;
-    color: #fff; /* Chữ trắng */
-    /* Thêm bóng chữ để dễ đọc trên nền ảnh */
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-}
-
-.hero p {
-    color: #fff;
-    max-width: 700px;
-    margin: auto;
-    margin-bottom: 30px;
-    /* Thêm bóng chữ */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
 }
 
 .btn {
     display: inline-block;
-    padding: 12px 30px;
-    background: #2d8a39; /* Xanh lá Vinasoy */
+    padding: 12px 35px;
+    background: var(--primary-green);
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 50px;
     font-weight: bold;
-    transition: 0.3s;
-    border: none;
-    cursor: pointer;
+    text-transform: uppercase;
+    margin-top: 20px;
+    transition: all 0.3s ease;
 }
 
 .btn:hover {
-    background-color: #216a2b; /* Xanh lá đậm khi di chuột */
-}
-
-/* Products Section */
-.products {
-    padding: 60px 0;
-    background-color: transparent; /* Giữ nền body */
-}
-
-.section-title {
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: #2d8a39;
-    font-size: 2.2rem;
-}
-
-.subtitle {
-    text-align: center;
-    margin-bottom: 50px;
-    font-style: italic;
-    color: #555;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); /* Rộng hơn chút */
-    gap: 25px;
-}
-
-.card, .card-premium {
-    padding: 25px;
-    border: none;
-    border-radius: 12px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    background: #fff;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Bóng nhẹ */
-    overflow: hidden; /* Quan trọng cho hiệu ứng ảnh */
-}
-
-.card:hover, .card-premium:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-}
-
-.highlight {
-    background: #eaffea; /* Nền xanh nhạt cho sản phẩm nổi bật */
-    border: 2px solid #2d8a39;
-}
-
-/* Định dạng cho hình ảnh sản phẩm */
-.product-img {
-    width: 100%;
-    height: 180px; /* Cố định chiều cao */
-    object-fit: contain; /* Giữ nguyên tỷ lệ, không cắt ảnh */
-    margin-bottom: 20px;
-    transition: transform 0.3s ease;
-}
-
-/* Hiệu ứng ảnh khi di chuột vào thẻ */
-.card:hover .product-img,
-.card-premium:hover .product-img {
+    background: var(--hover-green);
     transform: scale(1.05);
 }
 
-/* Veyo Section */
-.products-premium {
-    background-color: #2d8a39; /* Nền xanh cho phần cao cấp */
-    color: #fff;
-    padding: 80px 0;
-    margin-top: 60px;
+/* Sản phẩm */
+.products { padding: 80px 0; }
+.section-heading { text-align: center; margin-bottom: 50px; }
+.section-title { color: var(--primary-green); font-size: 2.2rem; margin-bottom: 5px; }
+.category-title { color: #555; border-bottom: 2px solid var(--primary-green); display: inline-block; padding-bottom: 5px; margin-bottom: 20px; }
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
 }
 
-.products-premium .section-title {
-    color: #fff;
-}
-
-.products-premium .subtitle {
-    color: rgba(255,255,255,0.8);
-}
-
-/* Điều chỉnh thẻ trong phần Veyo */
-.products-premium .card-premium {
-    background: #fff; /* Thẻ trắng nổi trên nền xanh */
-    color: #333;
-}
-
-.products-premium h4 {
-    margin-top: 0;
-    color: #2d8a39;
-}
-
-/* Các tính năng */
-.features {
-    margin-top: 50px;
-    text-align: center;
+.card, .card-premium {
     background: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    padding: 30px 20px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
 }
 
-.features p {
-    margin: 10px 0;
-    font-weight: 500;
+.card:hover, .card-premium:hover { 
+    transform: translateY(-10px); 
+    box-shadow: 0 15px 30px rgba(45, 138, 57, 0.15); 
 }
 
-/* Tech Section */
+.highlight { border: 2px solid var(--primary-green); }
+
+.product-img {
+    width: 100%;
+    height: 190px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    transition: transform 0.4s ease;
+}
+
+.card:hover .product-img { transform: scale(1.08); }
+
+/* Chuyên gia & Công nghệ */
 .tech {
+    background: var(--primary-green);
+    color: #fff;
     padding: 80px 0;
 }
 
@@ -229,60 +150,23 @@ nav ul li a:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    margin: 50px 0;
 }
 
 .tech-item {
+    background: rgba(255,255,255,0.1);
     padding: 30px;
-    background: #fff;
-    border-left: 6px solid #2d8a39;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.2);
 }
 
-.tech-item strong {
-    display: block;
-    font-size: 1.2rem;
-    color: #2d8a39;
-    margin-bottom: 10px;
-}
-
-/* Hệ sinh thái khác */
-.other-products {
-    padding: 60px 0 100px 0;
-    text-align: center;
-}
-
-.other-products h3 {
-    color: #2d8a39;
-    margin-bottom: 30px;
-}
-
-.other-products ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.other-products li {
-    background: #fff;
-    padding: 15px 25px;
-    border-radius: 30px;
-    font-weight: 500;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-}
+.tech-item strong { font-size: 1.2rem; display: block; margin-bottom: 10px; color: #fff; }
 
 /* Footer */
 footer {
-    background: #222; /* Footer tối hơn */
-    color: rgba(255,255,255,0.7);
+    background: #1a1a1a;
+    color: #ddd;
     text-align: center;
     padding: 40px 0;
 }
-
-footer p {
-    margin: 0;
-}
+.creator-info { margin-top: 15px; font-size: 0.9rem; color: #aaa; }
