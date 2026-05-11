@@ -170,3 +170,35 @@ footer {
     padding: 40px 0;
 }
 .creator-info { margin-top: 15px; font-size: 0.9rem; color: #aaa; }
+/* Hệ sinh thái sản phẩm khác (Đã khôi phục) */
+.other-products {
+    padding: 60px 0 80px 0;
+    text-align: center;
+}
+
+.other-products ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.other-products li {
+    background: #fff;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 500;
+    color: var(--text-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #eaeaea;
+    transition: all 0.3s;
+}
+
+.other-products li:hover {
+    background: var(--primary-green);
+    color: #fff;
+    transform: translateY(-3px);
+}
